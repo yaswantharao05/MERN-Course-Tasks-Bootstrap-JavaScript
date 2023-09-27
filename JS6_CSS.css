@@ -1,0 +1,28 @@
+.insta{
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.checkbox {
+  margin-left: 20px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.forgetpass{
+  text-align: right;
+  float: right;
+}
+
+.form-horizontal{
+  width: 430px;
+  padding: 25px 40px 50px 40px;
+}
+.inputGroupContainer{
+  width: 98%;
+}
+
+.signup{
+  /* text-align: center; */
+  padding-left: 30px;
+}

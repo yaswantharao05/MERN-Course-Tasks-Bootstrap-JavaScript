@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Javascript Task 7</title>
+  <style>
+    #train-container {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+    }
+
+    #train {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      animation-name: moveTrain;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-play-state: paused;
+    }
+
+    @keyframes moveTrain {
+      from {
+        left: 0;
+      }
+      to {
+        left: 100%;
+      }
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .txt{
+      color: blue;
+      text-align: center;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="train-container">
+    <img id="train" src="train.jpg" alt="Train" width="250" height="150">
+  </div>
+  <h2 class="txt">Click the following buttons to handle the animation</h2>
+  <div class="button-container">
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+  </div>
+
+  <script>
+    const train = document.getElementById('train');
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+    let isMoving = false;
+
+    startButton.addEventListener('click', () => {
+      if (!isMoving) {
+        train.style.animationPlayState = 'running';
+        isMoving = true;
+      }
+    });
+
+    stopButton.addEventListener('click', () => {
+      train.style.animationPlayState = 'paused';
+      isMoving = false;
+    });
+  </script>
+</body>
+</html>

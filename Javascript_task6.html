@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Task 6</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+    <link rel="stylesheet" href="JS6_CSS.css">
+  </head>
+  <body>
+    <br><br>
+    <center>
+      <div class="container">
+         <form class="well form-horizontal" action=" " method="post" id="contact_form">
+              <h1 class="insta"><i>Instagram</i></h1>
+               <div class="form-group">
+                  <div class="col-md-4 inputGroupContainer">
+                     <div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input  name="Username" placeholder="Username" class="form-control"  type="text">
+                     </div>
+                  </div>
+               </div>
+               <br>
+               <div class="form-group">
+                  <div class="col-md-4 inputGroupContainer">
+                     <div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input name="password" placeholder="Password" class="form-control"  type="password">
+                     </div>
+                  </div>
+               </div>
+               <br>
+               <div class="form-group">
+                  <div class="col-md-12">
+                     <button type="submit" class="btn btn-primary btn-block" style="background-color:#087cfc;font-weight:600;padding:10px 0 10px 0;font-size:20px" >Log in</button>
+                  </div>
+               </div>
+               <!-- <br> -->
+               <div class="checkbox">
+                 <input style="width: 17px;height:17px;" type="checkbox" name="" value="">Remember Me
+                 <a href="#" class="forgetpass">Forget Password?</a>
+               </div>
+         </form>
+         <h4 class="signup">Don't have an account! <a href="#">Sign up here</a></h4>
+      </div>
+    </center>
+    <script>
+       $(document).ready(function() {
+       $('#contact_form').bootstrapValidator({
+         feedbackIcons: {
+          invalid: '',
+         },
+         fields: {
+             Username: {
+                 validators: {
+                         notEmpty: {
+                         message: 'Username is required'
+                     }
+                 }
+             },
+              password: {
+                 validators: {
+                      notEmpty: {
+                         message: 'Password is required'
+                     }
+                 }
+             },
+             }
+         })
+       });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Task 6</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+    <style media="screen">
+      input,label,button {
+        border-left: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <br><br>
+     <div class="container">
+        <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+           <fieldset>
+              <div class="form-group w-50">
+                 <label>Name</label>
+                 <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+              </div>
+
+              <div class="form-group w-50">
+                 <label>E-Mail</label>
+                 <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+              </div>
+
+
+              <div class="form-group w-50">
+                 <label >Password</label>
+                 <input name="password" placeholder="Password" class="form-control"  type="password">
+              </div>
+
+              <div class="form-group w-50">
+                <label>Hobbies</label>
+                <select class="form-control" name="hobbies">
+                  <option value="">Select an option</option>
+                  <option>Cycling</option>
+                  <option>Reading books</option>
+                  <option>Playing football</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-danger btn-block">Submit</button>
+              </div>
+
+           </fieldset>
+        </form>
+     </div>
+     </div>
+     <script>
+        $(document).ready(function() {
+        $('#contact_form').bootstrapValidator({
+          feedbackIcons: {
+           invalid: 'glyphicon glyphicon-exclamation-sign',
+          },
+          fields: {
+              first_name: {
+                  validators: {
+                          notEmpty: {
+                          message: 'Name is required'
+                      }
+                  }
+              },
+               password: {
+                  validators: {
+                       notEmpty: {
+                          message: 'Password is required'
+                      }
+                  }
+              },
+              email: {
+                  validators: {
+                      notEmpty: {
+                          message: 'Email is required'
+                      },
+                      emailAddress: {
+                          message: 'Please supply a valid email address'
+                      }
+                  }
+              }
+              }
+          })
+        });
+     </script>
+  </body>
+</html>

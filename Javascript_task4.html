@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript Task 4</title>
+</head>
+<body>
+    <h1>Date and Time Display</h1>
+
+    <button onclick="showDate()">Show Date</button>
+    <p id="date"></p>
+    <br>
+    <button onclick="showTime()">Show Time</button>
+    <p id="time"></p>
+
+    <script>
+        function showDate() {
+            const now = new Date();
+            const day = now.getDate();
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const month = monthNames[now.getMonth()];
+            const year = now.getFullYear();
+            document.getElementById("date").innerText = `${day}/${month}/${year}`;
+        }
+
+        function showTime() {
+            const now = new Date();
+            const time = now.toLocaleTimeString();
+            document.getElementById("time").innerText = `${now}`;
+        }
+    </script>
+</body>
+</html>
